@@ -2,7 +2,9 @@
 import hmac
 import json
 import os
+import shutil
 import sqlite3
+import zipfile
 from pathlib import Path
 from typing import Annotated
 
@@ -305,3 +307,87 @@ async def upload_sqlite(
         temporary.unlink(missing_ok=True)
         raise
 # Railway auto-deploy verification
+@app.post("/internal/upload-pdfs")
+async def upload_pdfs(
+    request: Request,
+    x_upload_token: Annotated[str, Header()],
+):
+    expected_token = os.environ.get("SQLITE_UPLOAD_TOKEN", "")
+
+    if not expected_token or not hmac.compare_digest(
+        x_upload_token, expected_token
+    ):
+        raise HTTPException(401, "Unauthorized")
+
+    data_dir = Path("/app/data")
+    zip_path = data_dir / "pdfs.uploading.zip"
+    temp_dir = data_dir / "raw.uploading"
+    destination = data_dir / "raw"
+
+    data_dir.mkdir(parents=True, exist_ok=True)
+
+    try:
+        total = 0
+
+        with zip_path.open("wb") as file:
+            async for chunk in request.stream():
+                total += len(chunk)
+
+                if total > 200 * 1024 * 1024:
+                    raise HTTPException(413, "ZIP file too large")
+
+                file.write(chunk)
+
+        temp_dir.mkdir(parents=True, exist_ok=True)
+
+        with zipfile.ZipFile(zip_path) as archive:
+            pdf_files = [
+                item for item in archive.infolist()
+                if not item.is_dir()
+            ]
+
+            if not pdf_files or len(pdf_files) > 50:
+                raise HTTPException(400, "Invalid PDF archive")
+
+            extracted = 0
+            uncompressed_total = 0
+
+            for item in pdf_files:
+                name = Path(item.filename).name
+
+                if (
+                    name != item.filename
+                    or not name.lower().endswith(".pdf")
+                    or item.file_size > 100 * 1024 * 1024
+                ):
+                    raise HTTPException(400, "Invalid PDF filename or size")
+
+                uncompressed_total += item.file_size
+
+                if uncompressed_total > 200 * 1024 * 1024:
+                    raise HTTPException(413, "Extracted files too large")
+
+                with archive.open(item) as source:
+                    with (temp_dir / name).open("wb") as target:
+                        shutil.copyfileobj(source, target)
+
+                extracted += 1
+
+        if destination.exists():
+            raise HTTPException(409, "PDF directory already exists")
+
+        os.replace(temp_dir, destination)
+
+        return {
+            "status": "success",
+            "pdf_count": extracted,
+            "bytes_received": total,
+            "directory": str(destination),
+        }
+
+    except Exception:
+        shutil.rmtree(temp_dir, ignore_errors=True)
+        raise
+
+    finally:
+        zip_path.unlink(missing_ok=True)
