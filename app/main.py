@@ -304,3 +304,4 @@ async def upload_sqlite(
     except Exception:
         temporary.unlink(missing_ok=True)
         raise
+# Railway auto-deploy verification
