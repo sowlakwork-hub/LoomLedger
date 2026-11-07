@@ -1,0 +1,5 @@
+company,fiscal_year,basis,metric,value,unit,source_file,page_no,extraction_method,note,review_status
+ambika_cotton_mills,2026,standalone,borrowings_lt,0.0,INR_lakhs,ambika_cotton_mills_FY26.pdf,90,manual_pdf_verification,Ambika FY2026 Note 16: total borrowings are Rs. 0.00 lakhs; no non-current borrowing/term loan is outstanding.,APPROVED
+lakshmi_machine_works,2024,standalone,borrowings_lt,0.0,UNKNOWN,lakshmi_machine_works_FY24.pdf,212,manual_pdf_verification,Standalone capital management disclosure: no borrowings in capital portfolio; no borrowed funds.,APPROVED
+lakshmi_machine_works,2024,standalone,borrowings_st,0.0,UNKNOWN,lakshmi_machine_works_FY24.pdf,212,manual_pdf_verification,Standalone capital management disclosure: no borrowings in capital portfolio; no borrowed funds.,APPROVED
+lakshmi_machine_works,2026,standalone,finance_cost,0.0,UNKNOWN,lakshmi_machine_works_FY26.pdf,91,manual_pdf_verification,Standalone statement of profit and loss shows dash for finance costs in FY2026.,APPROVED

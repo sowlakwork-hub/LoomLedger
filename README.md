@@ -1,35 +1,138 @@
-# <Your product name>
+# LoomLedger
 
-> Fill this top section from your Examate project card on Day 1. Replace every line in angle brackets.
+LoomLedger is a financial-report extraction and analysis tool for Tamil Nadu textile companies. It helps credit analysts find financial information, calculate ratios, compare companies, and trace every reported number back to its annual-report source page.
 
 ## Problem
-<3–5 sentences: who struggles with what today, and what your product changes.>
+
+Credit analysts reviewing loans for Tamil Nadu textile mills often need to read hundreds of annual-report pages manually to find revenue, profitability, borrowings, and material costs. Extracting and comparing these figures across multiple companies and financial years is time-consuming and error-prone.
+
+LoomLedger organizes financial facts extracted from annual reports, calculates financial ratios using Python, and provides source-page references for verification. It also provides an AI-assisted analyst interface that can answer questions using safe, read-only SQL queries against the financial database.
 
 ## Who it is for
-<One or two real user types, for example "compliance officer at a gold-loan NBFC in Coimbatore".>
+
+- Bank credit analysts in Coimbatore and other parts of Tamil Nadu reviewing textile-mill loan applications.
+- Financial analysts comparing the performance and financial position of textile companies.
 
 ## Signature feature
-<One sentence: the feature only your product has.>
+
+Select 2–3 textile companies and a financial ratio to generate a three-year comparison chart, with each data point linked to its supporting annual-report source page.
 
 ## Hardest problem (my interview story)
-<In your own words, from your project card.>
+
+The hardest problem is ensuring that financial numbers are accurate and traceable. Annual reports contain tables with different layouts, units, and page references. LoomLedger stores extracted facts with their source information and calculates ratios using tested Python code rather than asking an AI model to perform financial calculations. Unknown or mixed units are blocked from ratio calculations instead of being silently assumed. This makes the results easier to verify and more reliable for financial analysis.
 
 ## Dataset
+
+See [DATASET.md](DATASET.md).
+
+The project currently covers 5 textile companies across 3 financial years, using annual reports containing more than 3,000 pages in total.
+
 | Source | Link | Documents | Pages | Licence / terms |
-|---|---|---|---|---|
-| <name> | <url> | <n> | <n> | <licence> |
+|---|---|---:|---:|---|
+| Company annual reports | See [DATASET.md](DATASET.md) | 15 | 3,000+ | Original company publications; refer to each report's terms and applicable copyright |
 
 ## 10 real questions
-See [docs/QUESTIONS.md](docs/QUESTIONS.md).
 
-## Run it
+See [docs/QUESTIONS.md](docs/QUESTIONS.md) for the ten analyst questions, including the question that the available dataset cannot answer.
+
+## Import manually verified financial facts
+
+The supplied extraction CSV contains manually verified financial facts. Import it once with:
+
 ```bash
-python -m venv .venv && source .venv/bin/activate   # Windows: .venv\Scripts\activate
+python -m app.import_verified data/auto_extraction_v7.csv
+```
+
+The importer does not overwrite existing facts. It stores each source unit and PDF page.
+
+Facts with `UNKNOWN` units are retained for inspection, but ratio calculations using unknown or mixed units are blocked rather than silently assuming INR crore.
+
+The materials-consumed metric is named `materials_cost`. It is not labelled as cotton-only because the annual-report line can include materials other than cotton.
+
+## Run it locally
+
+### 1. Create and activate a virtual environment
+
+**Windows (PowerShell):**
+
+```powershell
+python -m venv .venv
+.venv\Scripts\Activate.ps1
+```
+
+**macOS / Linux:**
+
+```bash
+python -m venv .venv
+source .venv/bin/activate
+```
+
+### 2. Install dependencies
+
+```bash
 pip install -r requirements-dev.txt
-cp .env.example .env                                 # Windows: copy .env.example .env
+```
+
+### 3. Configure environment variables
+
+**Windows:**
+
+```powershell
+copy .env.example .env
+```
+
+**macOS / Linux:**
+
+```bash
+cp .env.example .env
+```
+
+Add your required API key and configuration values to `.env`. Never commit API keys or other secrets to GitHub.
+
+### 4. Start the application
+
+```bash
 uvicorn app.main:app --reload
-curl localhost:8000/health
+```
+
+### 5. Check the health endpoint
+
+Open:
+
+```text
+http://localhost:8000/health
+```
+
+Or run:
+
+```bash
+curl http://localhost:8000/health
+```
+
+API documentation is available at:
+
+```text
+http://localhost:8000/docs
 ```
 
 ## Live link
-<Added in Week 2>
+
+Coming in Week 2.
+
+## Project scope
+
+LoomLedger is being developed in stages:
+
+- Financial fact extraction from annual reports.
+- Source-page tracking and manual verification.
+- Python-based financial ratio calculations.
+- Multi-company, multi-year ratio comparisons.
+- AI-assisted analyst queries using safe, read-only SQL.
+
+## Important design principles
+
+1. **Accuracy first:** Financial calculations are performed in Python, not generated by an LLM.
+2. **Traceability:** Every financial fact retains its source report and page reference.
+3. **Safe analysis:** Analyst queries use read-only SQL with restrictions.
+4. **No silent assumptions:** Unknown or incompatible units are not used in ratio calculations.
+5. **Reproducibility:** Existing verified facts are not overwritten by the CSV importer.

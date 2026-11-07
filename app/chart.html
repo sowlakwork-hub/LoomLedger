@@ -1,0 +1,1106 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LoomLedger | Financial Analyst</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+
+<style>
+:root {
+  --primary:#3869c6;
+  --primary-light:#edf3ff;
+  --navy:#243650;
+  --text:#283548;
+  --muted:#8490a1;
+  --border:#e7ebf1;
+  --background:#f7f8fa;
+  --green:#16845b;
+  --white:#fff;
+}
+
+*{box-sizing:border-box}
+
+body {
+  margin:0;
+  background:var(--background);
+  color:var(--text);
+  font-family:Inter,"Segoe UI",Arial,sans-serif;
+}
+
+button,input,select,textarea{font:inherit}
+
+header {
+  height:66px;
+  background:var(--white);
+  border-bottom:1px solid var(--border);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 6%;
+  position:sticky;
+  top:0;
+  z-index:10;
+}
+
+.brand {
+  font-size:21px;
+  font-weight:750;
+  letter-spacing:-.6px;
+  color:var(--navy);
+}
+
+.brand span{color:var(--primary)}
+
+.status {
+  font-size:12px;
+  color:var(--green);
+  background:#eaf6ef;
+  border-radius:20px;
+  padding:7px 12px;
+}
+
+main {
+  max-width:1100px;
+  margin:34px auto;
+  padding:0 20px 40px;
+}
+
+.heading{margin-bottom:26px}
+
+.heading h2 {
+  font-size:23px;
+  margin:0 0 7px;
+  font-weight:700;
+}
+
+.heading p {
+  color:var(--muted);
+  font-size:13px;
+  margin:0;
+  line-height:1.6;
+}
+
+.tabs {
+  display:flex;
+  gap:24px;
+  border-bottom:1px solid var(--border);
+  margin-bottom:22px;
+}
+
+.tab {
+  border:0;
+  background:none;
+  padding:13px 3px;
+  cursor:pointer;
+  color:var(--muted);
+  font-size:13px;
+  font-weight:650;
+  border-bottom:2px solid transparent;
+}
+
+.tab.active {
+  color:var(--primary);
+  border-bottom-color:var(--primary);
+}
+
+.panel{display:none}
+.panel.active{display:block}
+
+.card {
+  background:var(--white);
+  border:1px solid var(--border);
+  border-radius:13px;
+  padding:22px;
+  margin-bottom:18px;
+}
+
+.card h3 {
+  font-size:16px;
+  margin:0 0 6px;
+}
+
+.muted {
+  color:var(--muted);
+  font-size:12px;
+  line-height:1.6;
+}
+
+.suggestions {
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin:17px 0;
+}
+
+.suggestion {
+  background:white;
+  border:1px solid var(--border);
+  color:#62718a;
+  border-radius:20px;
+  padding:8px 12px;
+  cursor:pointer;
+  font-size:11px;
+}
+
+.suggestion:hover {
+  background:var(--primary-light);
+  color:var(--primary);
+}
+
+.chat {
+  min-height:250px;
+  max-height:560px;
+  overflow-y:auto;
+  padding:12px 2px;
+}
+
+.welcome {
+  text-align:center;
+  padding:65px 10px;
+  color:#929bab;
+  font-size:13px;
+  line-height:1.8;
+}
+
+.message {
+  display:flex;
+  margin:13px 0;
+}
+
+.message.user{justify-content:flex-end}
+
+.bubble {
+  max-width:90%;
+  min-width:0;
+  background:#f2f5fa;
+  border-radius:12px;
+  padding:13px 15px;
+  font-size:13px;
+  line-height:1.65;
+  overflow-wrap:anywhere;
+}
+
+.message.user .bubble {
+  background:#eaf0fc;
+}
+
+.bubble p{margin:0 0 9px}
+.bubble p:last-child{margin-bottom:0}
+
+.composer {
+  display:flex;
+  align-items:flex-end;
+  gap:9px;
+  padding:9px;
+  border:1px solid #dfe4ec;
+  border-radius:12px;
+  background:white;
+}
+
+.composer textarea {
+  flex:1;
+  min-width:0;
+  min-height:43px;
+  max-height:130px;
+  resize:vertical;
+  border:0;
+  outline:0;
+  padding:10px;
+  font-size:13px;
+}
+
+.primary {
+  border:0;
+  background:var(--primary);
+  color:white;
+  padding:11px 17px;
+  border-radius:9px;
+  cursor:pointer;
+  font-weight:650;
+  font-size:12px;
+}
+
+.primary:disabled {
+  opacity:.5;
+  cursor:wait;
+}
+
+.error {
+  background:#fff0f0;
+  border:1px solid #f5d5d8;
+  color:#a52d38;
+  padding:10px;
+  border-radius:8px;
+  font-size:12px;
+}
+
+.source {
+  display:inline-block;
+  margin:4px 9px 4px 0;
+  color:var(--primary);
+  font-size:11px;
+  font-weight:600;
+  text-decoration:none;
+}
+
+.source:hover{text-decoration:underline}
+
+.result-heading {
+  font-weight:700;
+  font-size:13px;
+  margin:13px 0 7px;
+}
+
+.table-wrap {
+  overflow-x:auto;
+  width:100%;
+}
+
+table {
+  border-collapse:collapse;
+  width:100%;
+  min-width:450px;
+  font-size:12px;
+  margin-top:10px;
+}
+
+th,td {
+  text-align:left;
+  padding:11px 9px;
+  border-bottom:1px solid #edf0f4;
+}
+
+th {
+  background:#fafbfd;
+  color:#7e899b;
+  font-weight:650;
+}
+
+.field-row {
+  display:grid;
+  grid-template-columns:1fr 1.5fr auto;
+  gap:15px;
+  align-items:end;
+  margin-top:20px;
+}
+
+label.field-label {
+  display:block;
+  color:#8792a2;
+  font-size:11px;
+  margin-bottom:8px;
+  font-weight:650;
+}
+
+select {
+  width:100%;
+  padding:11px;
+  border:1px solid #e0e5ed;
+  border-radius:9px;
+  background:white;
+  color:var(--text);
+  outline-color:var(--primary);
+}
+
+.company-list {
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:4px;
+}
+
+.company-option {
+  display:flex;
+  align-items:center;
+  gap:7px;
+  padding:9px 11px;
+  border:1px solid var(--border);
+  border-radius:9px;
+  background:white;
+  cursor:pointer;
+  color:#536178;
+  font-size:11px;
+}
+
+.company-option:has(input:checked) {
+  background:var(--primary-light);
+  border-color:var(--primary);
+  color:var(--primary);
+}
+
+.company-option input {
+  width:auto;
+  margin:0;
+  accent-color:var(--primary);
+}
+
+.company-option.disabled {
+  opacity:.45;
+  cursor:not-allowed;
+}
+
+.chart-wrap {
+  position:relative;
+  height:330px;
+  margin-top:25px;
+}
+
+.result-block {
+  border-top:1px solid #edf0f4;
+  padding:12px 0;
+}
+
+.gap-message {
+  background:#fff9e9;
+  color:#896b22;
+  padding:10px;
+  border-radius:8px;
+  font-size:12px;
+  margin-top:12px;
+}
+
+footer {
+  text-align:center;
+  padding:25px;
+  color:#a0a8b5;
+  font-size:11px;
+}
+
+@media(max-width:700px) {
+  main{padding:0 13px;margin-top:25px}
+  .card{padding:16px}
+  .field-row{grid-template-columns:1fr}
+  .chart-wrap{height:270px}
+  header{padding:0 15px}
+  .composer{align-items:stretch;flex-direction:column}
+  .composer button{align-self:flex-end}
+  .bubble{max-width:96%}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="brand">Loom<span>Ledger</span></div>
+  <div class="status">● Gemini connected</div>
+</header>
+
+<main>
+
+  <section class="heading">
+    <h2>Financial Analyst</h2>
+    <p>Explore textile company financials, compare ratios and verify every number against its annual report.</p>
+  </section>
+
+  <nav class="tabs">
+    <button class="tab active" data-target="ask-panel">Ask Analyst</button>
+    <button class="tab" data-target="ratio-panel">Ratio Explorer</button>
+  </nav>
+
+  <!-- AI CHAT -->
+  <section class="panel active" id="ask-panel">
+    <div class="card">
+      <h3>Ask a question</h3>
+      <p class="muted">Ask questions about company performance and annual-report financial data.</p>
+
+      <div class="suggestions">
+        <button class="suggestion" data-q="Show me the net margin of kpr_mill for all available years.">Net margin</button>
+        <button class="suggestion" data-q="Show me the revenue and net profit of kpr_mill for all available years.">Revenue & profit</button>
+        <button class="suggestion" data-q="Show me the debt to equity ratio of precot for all available years.">Debt-to-equity</button>
+        <button class="suggestion" data-q="Compare the revenue of kpr_mill and precot for all available years.">Compare companies</button>
+      </div>
+
+      <div class="chat" id="chat" aria-live="polite">
+        <div class="welcome">
+          <strong>Welcome to LoomLedger.</strong><br>
+          Ask a financial question to explore your annual-report data.
+        </div>
+      </div>
+
+      <form class="composer" id="ask-form">
+        <textarea id="question" placeholder="Ask LoomLedger about revenue, profit, ratios..." required></textarea>
+        <button class="primary" id="send" type="submit">Send ↗</button>
+      </form>
+
+      <p class="muted">Gemini interprets questions. Python calculates ratios. SQL retrieves verified database records.</p>
+    </div>
+  </section>
+
+  <!-- RATIO EXPLORER -->
+  <section class="panel" id="ratio-panel">
+    <div class="card">
+
+      <h3>Three-year ratio comparison</h3>
+      <p class="muted">>Choose one, two, or three companies and a ratio to compare their performance.</p>
+
+      <div class="field-row">
+
+        <div>
+          <label class="field-label" for="ratio">FINANCIAL RATIO</label>
+          <select id="ratio">
+            <option value="">Loading ratios...</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="field-label">SELECT COMPANIES</label>
+          <div class="company-list" id="company-list">
+            <span class="muted">Loading companies...</span>
+          </div>
+          <p class="muted" id="selection-count">Select 1–3 companies.</p>
+        </div>
+
+        <button class="primary" id="compare">Compare</button>
+
+      </div>
+
+      <div class="chart-wrap">
+        <canvas id="chart"></canvas>
+      </div>
+
+      <p class="muted" id="chart-message">Select companies and a ratio to begin.</p>
+
+      <div id="ratio-results"></div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer>LoomLedger · Evidence-backed financial intelligence</footer>
+
+<script>
+const $ = id => document.getElementById(id);
+
+let chart = null;
+
+
+// -----------------------------
+// TAB NAVIGATION
+// -----------------------------
+
+document.querySelectorAll(".tab").forEach(button => {
+  button.addEventListener("click", () => {
+    document.querySelectorAll(".tab").forEach(b => b.classList.remove("active"));
+    document.querySelectorAll(".panel").forEach(p => p.classList.remove("active"));
+
+    button.classList.add("active");
+    $(button.dataset.target).classList.add("active");
+  });
+});
+
+
+// -----------------------------
+// SAFE HTML HELPERS
+// -----------------------------
+
+function text(parent, tag, value, className) {
+  const el = document.createElement(tag);
+  el.textContent = value ?? "";
+
+  if (className) el.className = className;
+
+  parent.appendChild(el);
+  return el;
+}
+
+
+function pdfLink(file, page) {
+  const a = document.createElement("a");
+
+  a.className = "source";
+  a.textContent = `${file} · Page ${page} ↗`;
+
+  a.href = `/pdf/${encodeURIComponent(file)}#page=${Number(page)}`;
+  a.target = "_blank";
+  a.rel = "noopener noreferrer";
+
+  return a;
+}
+
+
+// -----------------------------
+// CHAT INTERFACE
+// -----------------------------
+
+function addMessage(kind, value) {
+  const chat = $("chat");
+
+  const welcome = chat.querySelector(".welcome");
+  if (welcome) welcome.remove();
+
+  const row = document.createElement("div");
+  row.className = `message ${kind}`;
+
+  const bubble = text(row, "div", value, "bubble");
+
+  chat.appendChild(row);
+  chat.scrollTop = chat.scrollHeight;
+
+  return bubble;
+}
+
+
+function renderTable(parent, rows) {
+  if (!rows.length) {
+    text(parent, "p", "No matching records found.", "muted");
+    return;
+  }
+
+  const columns = [...new Set(rows.flatMap(row => Object.keys(row)))];
+
+  const table = document.createElement("table");
+  const thead = document.createElement("thead");
+  const header = document.createElement("tr");
+
+  columns.forEach(column => {
+    text(header, "th", column.replaceAll("_", " "));
+  });
+
+  text(header, "th", "Source");
+
+  thead.appendChild(header);
+  table.appendChild(thead);
+
+  const tbody = document.createElement("tbody");
+
+  rows.forEach(row => {
+    const tr = document.createElement("tr");
+
+    columns.forEach(column => {
+      text(tr, "td", row[column] ?? "—");
+    });
+
+    const td = document.createElement("td");
+
+    if (row.source_file && row.page_no) {
+      td.appendChild(pdfLink(row.source_file, row.page_no));
+    } else {
+      td.textContent = "Unavailable";
+    }
+
+    tr.appendChild(td);
+    tbody.appendChild(tr);
+  });
+
+  table.appendChild(tbody);
+
+  const wrap = document.createElement("div");
+  wrap.className = "table-wrap";
+  wrap.appendChild(table);
+
+  parent.appendChild(wrap);
+}
+
+
+function renderRatioAnswer(parent, result) {
+  text(parent, "p", `Calculated ratio: ${result.ratio}`, "result-heading");
+  text(parent, "p", "Calculated by Python using database financial facts.", "muted");
+
+  Object.entries(result.series || {}).forEach(([company, points]) => {
+    text(parent, "h4", company, "result-heading");
+
+    points.forEach(point => {
+      const block = text(
+        parent,
+        "div",
+        `FY ${point.year} · ${Number(point.value).toFixed(4)} ${result.unit}`,
+        "result-block"
+      );
+
+      const unique = new Map();
+
+      (point.pages || []).forEach(source => {
+        unique.set(`${source.file}:${source.page}`, source);
+      });
+
+      unique.forEach(source => {
+        block.appendChild(pdfLink(source.file, source.page));
+      });
+
+      if (!unique.size) {
+        text(block, "span", "Source page unavailable.", "muted");
+      }
+    });
+  });
+
+  if (result.gaps?.length) {
+    const gaps = result.gaps.map(
+      gap => `${gap.company} ${gap.year}: ${gap.reason}`
+    ).join(" | ");
+
+    text(parent, "div", `Data gaps: ${gaps}`, "gap-message");
+  }
+}
+
+
+function renderAnswer(parent, data) {
+  if (data.error) {
+    text(parent, "div", data.error, "error");
+
+    if (data.details) {
+      text(parent, "p", data.details, "muted");
+    }
+
+    return;
+  }
+
+  if (data.reason || data.answer === null) {
+    text(parent, "p", "This information could not be answered from the available database.");
+    text(parent, "p", data.reason || "No supporting information is available.", "muted");
+    return;
+  }
+
+  if (data.result?.series) {
+    renderRatioAnswer(parent, data.result);
+    return;
+  }
+
+  if (Array.isArray(data.rows)) {
+    text(parent, "p", `${data.rows.length} database records retrieved.`, "result-heading");
+    renderTable(parent, data.rows);
+    return;
+  }
+
+  text(parent, "p", "No displayable results were returned.");
+}
+
+
+// -----------------------------
+// GEMINI ASK ENDPOINT
+// -----------------------------
+
+async function askQuestion(question) {
+  question = question.trim();
+
+  if (!question) return;
+
+  addMessage("user", question);
+
+  const answerBubble = addMessage("assistant", "Thinking...");
+  $("send").disabled = true;
+
+  try {
+    const response = await fetch("/ask", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      },
+      body: JSON.stringify({ question })
+    });
+
+    const data = await response.json();
+
+    answerBubble.replaceChildren();
+
+    if (!response.ok) {
+      text(
+        answerBubble,
+        "div",
+        data.detail || "Request failed.",
+        "error"
+      );
+    } else {
+      renderAnswer(answerBubble, data);
+    }
+
+  } catch (error) {
+    answerBubble.replaceChildren();
+
+    text(
+      answerBubble,
+      "div",
+      `Connection error: ${error.message}`,
+      "error"
+    );
+
+  } finally {
+    $("send").disabled = false;
+    $("chat").scrollTop = $("chat").scrollHeight;
+  }
+}
+
+
+$("ask-form").addEventListener("submit", event => {
+  event.preventDefault();
+
+  const question = $("question").value;
+  $("question").value = "";
+
+  askQuestion(question);
+});
+
+
+$("question").addEventListener("keydown", event => {
+  if (event.key === "Enter" && !event.shiftKey) {
+    event.preventDefault();
+    $("ask-form").requestSubmit();
+  }
+});
+
+
+document.querySelectorAll(".suggestion").forEach(button => {
+  button.addEventListener("click", () => {
+    askQuestion(button.dataset.q);
+  });
+});
+
+
+// -----------------------------
+// LOAD AVAILABLE RATIOS
+// -----------------------------
+
+async function loadRatios() {
+  try {
+    const response = await fetch("/ratios");
+
+    if (!response.ok) {
+      throw new Error("Could not load available ratios.");
+    }
+
+    const ratios = await response.json();
+    const select = $("ratio");
+
+    select.replaceChildren();
+
+    Object.entries(ratios).forEach(([name, details]) => {
+      const option = document.createElement("option");
+
+      option.value = name;
+      option.textContent =
+        `${name.replaceAll("_", " ")} (${details.unit})`;
+
+      select.appendChild(option);
+    });
+
+  } catch (error) {
+    $("chart-message").textContent = error.message;
+  }
+}
+
+
+// -----------------------------
+// LOAD COMPANIES FROM DATABASE
+// -----------------------------
+
+async function loadCompanies() {
+  const container = $("company-list");
+
+  try {
+    const response = await fetch("/companies");
+
+    if (!response.ok) {
+      throw new Error("Could not load companies.");
+    }
+
+    const data = await response.json();
+
+    container.replaceChildren();
+
+    data.companies.forEach(company => {
+      const label = document.createElement("label");
+
+      label.className = "company-option";
+
+      const checkbox = document.createElement("input");
+
+      checkbox.type = "checkbox";
+      checkbox.value = company;
+
+      checkbox.addEventListener("change", updateCompanySelection);
+
+      label.appendChild(checkbox);
+      label.appendChild(document.createTextNode(company));
+
+      container.appendChild(label);
+    });
+
+    updateCompanySelection();
+
+  } catch (error) {
+    container.textContent = error.message;
+  }
+}
+
+
+// -----------------------------
+// COMPANY SELECTION
+// -----------------------------
+
+function updateCompanySelection() {
+  const checkboxes = [
+    ...document.querySelectorAll(
+      '#company-list input[type="checkbox"]'
+    )
+  ];
+
+  const selectedCount = checkboxes.filter(
+    checkbox => checkbox.checked
+  ).length;
+
+  checkboxes.forEach(checkbox => {
+    const label = checkbox.closest(".company-option");
+
+    checkbox.disabled =
+      !checkbox.checked && selectedCount >= 3;
+
+    label.classList.toggle("disabled", checkbox.disabled);
+  });
+
+  $("selection-count").textContent =
+    `${selectedCount} of 3 selected. Select 1–3 companies.`;
+}
+
+
+// -----------------------------
+// THREE-YEAR RATIO COMPARISON
+// -----------------------------
+
+async function compareCompanies() {
+  const selected = [
+    ...document.querySelectorAll(
+      '#company-list input[type="checkbox"]:checked'
+    )
+  ].map(input => input.value);
+
+  if (selected.length < 1 || selected.length > 3) {
+    $("chart-message").textContent =
+      "Please select one, two, or three companies.";
+    return;
+  }
+
+  if (!$("ratio").value) {
+    $("chart-message").textContent = "Please select a financial ratio.";
+    return;
+  }
+
+  $("compare").disabled = true;
+  $("chart-message").textContent = "Loading financial data...";
+  $("ratio-results").replaceChildren();
+
+  try {
+    const params = new URLSearchParams();
+
+    params.set("name", $("ratio").value);
+
+    selected.forEach(company => {
+      params.append("companies", company);
+    });
+
+    const response = await fetch(`/ratio?${params.toString()}`);
+    const data = await response.json();
+
+    if (!response.ok) {
+      throw new Error(data.detail || "Comparison failed.");
+    }
+
+    const years = [
+      ...new Set(
+        Object.values(data.series)
+          .flat()
+          .map(point => point.year)
+      )
+    ].sort((a, b) => a - b);
+
+    const datasets = Object.entries(data.series).map(
+      ([company, points]) => ({
+        label: company,
+
+        data: years.map(year => {
+          const point = points.find(p => p.year === year);
+          return point ? point.value : null;
+        }),
+
+        pointRadius: 6,
+        pointHoverRadius: 9,
+        tension: 0.25
+      })
+    );
+
+    if (chart) {
+      chart.destroy();
+    }
+
+    chart = new Chart($("chart"), {
+      type: "line",
+
+      data: {
+        labels: years,
+        datasets
+      },
+
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+
+        interaction: {
+          mode: "nearest",
+          intersect: true
+        },
+
+        plugins: {
+          legend: {
+            position: "bottom"
+          },
+
+          tooltip: {
+            callbacks: {
+              afterLabel(context) {
+                const company = datasets[context.datasetIndex].label;
+
+                const point = data.series[company].find(
+                  p => p.year === years[context.dataIndex]
+                );
+
+                return point?.pages?.map(
+                  p => `${p.file}, page ${p.page}`
+                ).join("\n") || "No source page";
+              }
+            }
+          }
+        },
+
+        scales: {
+          y: {
+            title: {
+              display: true,
+              text: `${data.ratio} (${data.unit})`
+            }
+          }
+        },
+
+        onClick(event, elements) {
+          if (!elements.length) return;
+
+          const element = elements[0];
+          const company = datasets[element.datasetIndex].label;
+
+          const point = data.series[company].find(
+            p => p.year === years[element.index]
+          );
+
+          if (point?.pages?.length) {
+            const source = point.pages[0];
+
+            window.open(
+              `/pdf/${encodeURIComponent(source.file)}#page=${Number(source.page)}`,
+              "_blank",
+              "noopener"
+            );
+          }
+        }
+      }
+    });
+
+    $("chart-message").textContent =
+      `Comparing ${selected.join(", ")}. Select a chart point to open its source PDF page.`;
+
+    renderComparisonTable(data);
+
+  } catch (error) {
+    $("chart-message").textContent = error.message;
+
+  } finally {
+    $("compare").disabled = false;
+  }
+}
+
+
+// -----------------------------
+// VALUES AND CLICKABLE SOURCES
+// -----------------------------
+
+function renderComparisonTable(data) {
+  const container = $("ratio-results");
+
+  container.replaceChildren();
+
+  text(
+    container,
+    "h4",
+    "Calculated values and source pages",
+    "result-heading"
+  );
+
+  Object.entries(data.series).forEach(([company, points]) => {
+    text(container, "h4", company, "result-heading");
+
+    const table = document.createElement("table");
+    const header = document.createElement("tr");
+
+    ["Financial year", `Calculated value (${data.unit})`, "Source pages"]
+      .forEach(value => text(header, "th", value));
+
+    table.appendChild(header);
+
+    points.forEach(point => {
+      const row = document.createElement("tr");
+
+      text(row, "td", point.year);
+
+      text(
+        row,
+        "td",
+        Number(point.value).toFixed(4)
+      );
+
+      const sourceCell = document.createElement("td");
+      const unique = new Map();
+
+      (point.pages || []).forEach(source => {
+        unique.set(`${source.file}:${source.page}`, source);
+      });
+
+      unique.forEach(source => {
+        sourceCell.appendChild(
+          pdfLink(source.file, source.page)
+        );
+      });
+
+      if (!unique.size) {
+        sourceCell.textContent = "Unavailable";
+      }
+
+      row.appendChild(sourceCell);
+      table.appendChild(row);
+    });
+
+    const wrapper = document.createElement("div");
+    wrapper.className = "table-wrap";
+    wrapper.appendChild(table);
+
+    container.appendChild(wrapper);
+  });
+
+  if (data.gaps?.length) {
+    const message = data.gaps.map(
+      gap => `${gap.company} ${gap.year}: ${gap.reason}`
+    ).join(" | ");
+
+    text(
+      container,
+      "div",
+      `Data gaps: ${message}`,
+      "gap-message"
+    );
+  }
+}
+
+
+// -----------------------------
+// INITIALISE
+// -----------------------------
+
+$("compare").addEventListener("click", compareCompanies);
+
+loadRatios();
+loadCompanies();
+
+</script>
+
+</body>
+</html>

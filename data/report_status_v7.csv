@@ -1,0 +1,16 @@
+﻿company,fiscal_year,source_file,total_pages,ocr_pages_with_extracted_facts,metrics_found,metrics_expected,missing_metrics,status
+Ambika Cotton Mills,2024,ambika_cotton_mills_FY24.pdf,100,,9,9,,EXTRACTED_REQUIRES_VALIDATION
+Ambika Cotton Mills,2025,ambika_cotton_mills_FY25.pdf,108,,9,9,,EXTRACTED_REQUIRES_VALIDATION
+Ambika Cotton Mills,2026,ambika_cotton_mills_FY26.pdf,108,,8,9,borrowings_lt,EXTRACTED_REQUIRES_VALIDATION
+KPR Mill,2024,kpr_mill_FY24.pdf,220,,9,9,,EXTRACTED_REQUIRES_VALIDATION
+KPR Mill,2025,kpr_mill_FY25.pdf,220,11; 99; 100; 134,8,9,borrowings_lt,EXTRACTED_REQUIRES_VALIDATION
+KPR Mill,2026,kpr_mill_FY26.pdf,220,,9,9,,EXTRACTED_REQUIRES_VALIDATION
+Lakshmi Machine Works,2024,lakshmi_machine_works_FY24.pdf,283,,7,9,borrowings_lt; borrowings_st,EXTRACTED_REQUIRES_VALIDATION
+Lakshmi Machine Works,2025,lakshmi_machine_works_FY25.pdf,141,,9,9,,EXTRACTED_REQUIRES_VALIDATION
+Lakshmi Machine Works,2026,lakshmi_machine_works_FY26.pdf,151,,6,9,finance_cost; borrowings_lt; borrowings_st,EXTRACTED_REQUIRES_VALIDATION
+Precot,2024,precot_FY24.pdf,162,,9,9,,EXTRACTED_REQUIRES_VALIDATION
+Precot,2025,precot_FY25.pdf,170,,9,9,,EXTRACTED_REQUIRES_VALIDATION
+Precot,2026,precot_FY26.pdf,180,,9,9,,EXTRACTED_REQUIRES_VALIDATION
+Rajapalayam Mills,2024,rajapalayam_mills_FY24.pdf,274,,9,9,,EXTRACTED_REQUIRES_VALIDATION
+Rajapalayam Mills,2025,rajapalayam_mills_FY25.pdf,278,,9,9,,EXTRACTED_REQUIRES_VALIDATION
+Rajapalayam Mills,2026,rajapalayam_mills_FY26.pdf,294,,9,9,,EXTRACTED_REQUIRES_VALIDATION

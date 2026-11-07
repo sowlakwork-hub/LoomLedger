@@ -1,0 +1,129 @@
+company	fiscal_year	basis	metric	value	unit	source_file	page_no	extraction_method	matched_text	note	review_status
+Ambika Cotton Mills	2024	standalone	borrowings_lt	0	INR_lakhs	ambika_cotton_mills_FY24.pdf	68	pdfplumber	(i) Borrowings 0.00 0.00	Extracted from Balance Sheet liability section.	PENDING_REVIEW
+Ambika Cotton Mills	2024	standalone	borrowings_st	8197.56	INR_lakhs	ambika_cotton_mills_FY24.pdf	68	pdfplumber	(i) Borrowings 16 8197.56 0.00	Extracted from Balance Sheet liability section.	PENDING_REVIEW
+Ambika Cotton Mills	2024	standalone	revenue	82345.99	INR_lakhs	ambika_cotton_mills_FY24.pdf	69	pdfplumber	Revenue from operations 21 82345.99 84750.14		PENDING_REVIEW
+Ambika Cotton Mills	2024	standalone	net_profit	6297.36	INR_lakhs	ambika_cotton_mills_FY24.pdf	69	pdfplumber	Profit after tax from continuing operations for the year 6297.36 11189.40		PENDING_REVIEW
+Ambika Cotton Mills	2024	standalone	pbt	8524.65	INR_lakhs	ambika_cotton_mills_FY24.pdf	69	pdfplumber	Profit before tax after exceptional items 8524.65 15247.93		PENDING_REVIEW
+Ambika Cotton Mills	2024	standalone	finance_cost	1907.05	INR_lakhs	ambika_cotton_mills_FY24.pdf	69	pdfplumber	Finance costs 26 1907.05 639.68		PENDING_REVIEW
+Ambika Cotton Mills	2024	standalone	depreciation	2770.33	INR_lakhs	ambika_cotton_mills_FY24.pdf	69	pdfplumber	Depreciation and amortization expense 27 2770.33 2982.01		PENDING_REVIEW
+Ambika Cotton Mills	2024	standalone	materials_cost	53818.03	INR_lakhs	ambika_cotton_mills_FY24.pdf	69	pdfplumber	Cost of materials consumed 23 53818.03 66059.83		PENDING_REVIEW
+Ambika Cotton Mills	2024	standalone	equity	85889.39	INR_lakhs	ambika_cotton_mills_FY24.pdf	68	pdfplumber	Total Equity (A) 85889.39 81661.54		PENDING_REVIEW
+Ambika Cotton Mills	2025	standalone	borrowings_lt	0	INR_lakhs	ambika_cotton_mills_FY25.pdf	74	pdfplumber	(i) Borrowings 0.00 0.00	Extracted from Balance Sheet liability section.	PENDING_REVIEW
+Ambika Cotton Mills	2025	standalone	borrowings_st	5072.45	INR_lakhs	ambika_cotton_mills_FY25.pdf	74	pdfplumber	(i) Borrowings 16 5072.45 8197.56	Extracted from Balance Sheet liability section.	PENDING_REVIEW
+Ambika Cotton Mills	2025	standalone	revenue	70207.04	INR_lakhs	ambika_cotton_mills_FY25.pdf	75	pdfplumber	Revenue from operations 21 70207.04 82345.99		PENDING_REVIEW
+Ambika Cotton Mills	2025	standalone	net_profit	6574.16	INR_lakhs	ambika_cotton_mills_FY25.pdf	75	pdfplumber	Profit after tax from continuing operations for the year 6574.16 6297.36		PENDING_REVIEW
+Ambika Cotton Mills	2025	standalone	pbt	9118.69	INR_lakhs	ambika_cotton_mills_FY25.pdf	75	pdfplumber	Profit before tax after exceptional items 9118.69 8524.65		PENDING_REVIEW
+Ambika Cotton Mills	2025	standalone	finance_cost	1619.73	INR_lakhs	ambika_cotton_mills_FY25.pdf	75	pdfplumber	Finance costs 26 1619.73 1907.05		PENDING_REVIEW
+Ambika Cotton Mills	2025	standalone	depreciation	2244.14	INR_lakhs	ambika_cotton_mills_FY25.pdf	75	pdfplumber	Depreciation and amortization expense 27 2244.14 2770.33		PENDING_REVIEW
+Ambika Cotton Mills	2025	standalone	materials_cost	49190.78	INR_lakhs	ambika_cotton_mills_FY25.pdf	75	pdfplumber	Cost of materials consumed 23 49190.78 53818.03		PENDING_REVIEW
+Ambika Cotton Mills	2025	standalone	equity	90405.59	INR_lakhs	ambika_cotton_mills_FY25.pdf	74	pdfplumber	Total Equity (A) 90405.59 85889.39		PENDING_REVIEW
+Ambika Cotton Mills	2026	standalone	borrowings_st	0	INR_lakhs	ambika_cotton_mills_FY26.pdf	73	pdfplumber	(i) Borrowings 16 0.00 5072.45	Extracted from Balance Sheet liability section.	PENDING_REVIEW
+Ambika Cotton Mills	2026	standalone	revenue	78095.56	INR_lakhs	ambika_cotton_mills_FY26.pdf	74	pdfplumber	Revenue from operations 21 78095.56 70207.04		PENDING_REVIEW
+Ambika Cotton Mills	2026	standalone	net_profit	7156.49	INR_lakhs	ambika_cotton_mills_FY26.pdf	74	pdfplumber	Profit after tax from continuing operations for the year 7156.49 6574.16		PENDING_REVIEW
+Ambika Cotton Mills	2026	standalone	pbt	9619.3	INR_lakhs	ambika_cotton_mills_FY26.pdf	74	pdfplumber	Profit before tax after exceptional items 9619.30 9118.69		PENDING_REVIEW
+Ambika Cotton Mills	2026	standalone	finance_cost	1267.66	INR_lakhs	ambika_cotton_mills_FY26.pdf	74	pdfplumber	Finance Costs 26 1267.66 1619.73		PENDING_REVIEW
+Ambika Cotton Mills	2026	standalone	depreciation	2056.19	INR_lakhs	ambika_cotton_mills_FY26.pdf	74	pdfplumber	Depreciation and amortization expense 27 2056.19 2244.14		PENDING_REVIEW
+Ambika Cotton Mills	2026	standalone	materials_cost	47259.14	INR_lakhs	ambika_cotton_mills_FY26.pdf	74	pdfplumber	Cost of materials consumed 23 47259.14 49190.78		PENDING_REVIEW
+Ambika Cotton Mills	2026	standalone	equity	95431.43	INR_lakhs	ambika_cotton_mills_FY26.pdf	73	pdfplumber	Total Equity 95431.43 90405.59		PENDING_REVIEW
+KPR Mill	2024	standalone	borrowings_lt	18	INR_lakhs	kpr_mill_FY24.pdf	99	pdfplumber	(i) Borrowings 18 - 29	Extracted from Balance Sheet liability section.	PENDING_REVIEW
+KPR Mill	2024	standalone	borrowings_st	28651	INR_lakhs	kpr_mill_FY24.pdf	99	pdfplumber	"(i) Borrowings 22 28,651 49,770"	Extracted from Balance Sheet liability section.	PENDING_REVIEW
+KPR Mill	2024	standalone	revenue	405367	INR_lakhs	kpr_mill_FY24.pdf	100	pdfplumber	"I. Revenue from operations 27 4,05,367 4,73,955"		PENDING_REVIEW
+KPR Mill	2024	standalone	net_profit	55492	INR_lakhs	kpr_mill_FY24.pdf	100	pdfplumber	"VIII. Profit for the year (VI-VII) 55,492 63,504"		PENDING_REVIEW
+KPR Mill	2024	standalone	pbt	69471	INR_lakhs	kpr_mill_FY24.pdf	100	pdfplumber	"VI. Profit before tax (III-V) 69,471 82,475"		PENDING_REVIEW
+KPR Mill	2024	standalone	finance_cost	2284	INR_lakhs	kpr_mill_FY24.pdf	100	pdfplumber	"Finance costs 32 2,284 2,670"		PENDING_REVIEW
+KPR Mill	2024	standalone	depreciation	8163	INR_lakhs	kpr_mill_FY24.pdf	100	pdfplumber	"Depreciation and amortisation expense 4 8,163 7,764"		PENDING_REVIEW
+KPR Mill	2024	standalone	materials_cost	239939	INR_lakhs	kpr_mill_FY24.pdf	100	pdfplumber	"Cost of materials consumed 29 2,39,939 3,03,973"		PENDING_REVIEW
+KPR Mill	2024	standalone	equity	337407	INR_lakhs	kpr_mill_FY24.pdf	99	pdfplumber	"Total equity 3,37,407 2,97,296"		PENDING_REVIEW
+KPR Mill	2025	standalone	net_profit	65304	INR_lakhs	kpr_mill_FY25.pdf	11	tesseract_ocr	"Profit After Tax 65,304 55,492 81,511 80,535"		PENDING_REVIEW
+KPR Mill	2025	standalone	pbt	83525	INR_lakhs	kpr_mill_FY25.pdf	11	tesseract_ocr	"Profit Before Tax 83,525 63,477 1,06,278 1,04,039"		PENDING_REVIEW
+KPR Mill	2025	standalone	borrowings_st	24143	INR_lakhs	kpr_mill_FY25.pdf	99	tesseract_ocr	"fi} Borrowings 21 24,143 26,651"	Extracted from Balance Sheet liability section.	PENDING_REVIEW
+KPR Mill	2025	standalone	revenue	421567	INR_lakhs	kpr_mill_FY25.pdf	100	tesseract_ocr	"|. Revenue from operations 26 4.24 567 4.05,367"		PENDING_REVIEW
+KPR Mill	2025	standalone	finance_cost	1996	INR_lakhs	kpr_mill_FY25.pdf	100	tesseract_ocr	"Finance costs 37 1,996 2.284"		PENDING_REVIEW
+KPR Mill	2025	standalone	depreciation	8973	INR_lakhs	kpr_mill_FY25.pdf	100	tesseract_ocr	"Depreciation and amortisation expenses 4 8,973 6,163"		PENDING_REVIEW
+KPR Mill	2025	standalone	materials_cost	2468598	INR_lakhs	kpr_mill_FY25.pdf	100	tesseract_ocr	"Cost of materials consumed 28 2,468,598 239,939"		PENDING_REVIEW
+KPR Mill	2025	standalone	equity	385621	INR_lakhs	kpr_mill_FY25.pdf	134	tesseract_ocr	The Company's Net Debt to Total Equity ratio as at 31.03.2025 was as follows		PENDING_REVIEW
+KPR Mill	2026	standalone	borrowings_st	39464	INR_lakhs	kpr_mill_FY26.pdf	102	pdfplumber	"(i) Borrowings 23 39,464 24,143"	Extracted from Balance Sheet liability section.	PENDING_REVIEW
+KPR Mill	2026	consolidated	borrowings_lt	2581	INR_lakhs	kpr_mill_FY26.pdf	164	pdfplumber	"(i) Borrowings 18 2,581 5,383"	Extracted from Balance Sheet liability section.	PENDING_REVIEW
+KPR Mill	2026	standalone	revenue	430637	INR_lakhs	kpr_mill_FY26.pdf	103	pdfplumber	"I. Revenue from operations 28 4,30,637 4,21,567"		PENDING_REVIEW
+KPR Mill	2026	standalone	net_profit	60602	INR_lakhs	kpr_mill_FY26.pdf	103	pdfplumber	"VIII. Profit for the period (VI-VII) 60,602 65,304"		PENDING_REVIEW
+KPR Mill	2026	standalone	pbt	78286	INR_lakhs	kpr_mill_FY26.pdf	103	pdfplumber	"VI. Profit before tax (III-V) 78,286 83,525"		PENDING_REVIEW
+KPR Mill	2026	standalone	finance_cost	3376	INR_lakhs	kpr_mill_FY26.pdf	103	pdfplumber	"Finance costs 33 3,376 1,996"		PENDING_REVIEW
+KPR Mill	2026	standalone	depreciation	9611	INR_lakhs	kpr_mill_FY26.pdf	103	pdfplumber	"Depreciation and amortisation expenses 4 9,611 8,973"		PENDING_REVIEW
+KPR Mill	2026	standalone	materials_cost	249820	INR_lakhs	kpr_mill_FY26.pdf	103	pdfplumber	"Cost of materials consumed 30 2,49,820 2,48,538"		PENDING_REVIEW
+KPR Mill	2026	standalone	equity	429133	INR_lakhs	kpr_mill_FY26.pdf	102	pdfplumber	"Total equity 4,29,133 3,85,621"		PENDING_REVIEW
+Lakshmi Machine Works	2024	standalone	revenue	4597.14	UNKNOWN	lakshmi_machine_works_FY24.pdf	165	pdfplumber	"Revenue from operations 20 4,597.14 4,533.23"		PENDING_REVIEW
+Lakshmi Machine Works	2024	standalone	net_profit	371.38	UNKNOWN	lakshmi_machine_works_FY24.pdf	165	pdfplumber	Profit after tax from continuing operations for the year 371.38 350.21		PENDING_REVIEW
+Lakshmi Machine Works	2024	standalone	pbt	479.88	UNKNOWN	lakshmi_machine_works_FY24.pdf	165	pdfplumber	Profit before tax after exceptional items 479.88 485.41		PENDING_REVIEW
+Lakshmi Machine Works	2024	standalone	finance_cost	0	UNKNOWN	lakshmi_machine_works_FY24.pdf	165	pdfplumber	Finance costs 28 - -		PENDING_REVIEW
+Lakshmi Machine Works	2024	standalone	depreciation	91.74	UNKNOWN	lakshmi_machine_works_FY24.pdf	165	pdfplumber	Depreciation and amortisation expense 25 91.74 73.43		PENDING_REVIEW
+Lakshmi Machine Works	2024	standalone	materials_cost	2905.35	UNKNOWN	lakshmi_machine_works_FY24.pdf	165	pdfplumber	"Cost of materials consumed 22 2,905.35 2,974.45"		PENDING_REVIEW
+Lakshmi Machine Works	2024	standalone	equity	2662.29	UNKNOWN	lakshmi_machine_works_FY24.pdf	164	pdfplumber	"Total Equity 2,662.29 2,299.99"		PENDING_REVIEW
+Lakshmi Machine Works	2025	standalone	revenue	2909.4	UNKNOWN	lakshmi_machine_works_FY25.pdf	81	pdfplumber	"Revenue from operations 20 2,909.40 4,597.14"		PENDING_REVIEW
+Lakshmi Machine Works	2025	standalone	net_profit	238.24	UNKNOWN	lakshmi_machine_works_FY25.pdf	81	pdfplumber	Profit after tax from continuing operations for the year 238.24 371.38		PENDING_REVIEW
+Lakshmi Machine Works	2025	standalone	pbt	286.87	UNKNOWN	lakshmi_machine_works_FY25.pdf	81	pdfplumber	Profit before tax after exceptional items 286.87 479.88		PENDING_REVIEW
+Lakshmi Machine Works	2025	standalone	finance_cost	0	UNKNOWN	lakshmi_machine_works_FY25.pdf	81	pdfplumber	"(iv) Bank balances other than (iii) above 8(b) 1,213.24 833.60 Finance costs 28 - -"		PENDING_REVIEW
+Lakshmi Machine Works	2025	standalone	depreciation	107.26	UNKNOWN	lakshmi_machine_works_FY25.pdf	81	pdfplumber	Financial Assets Depreciation and amortisation expense 25 107.26 91.74		PENDING_REVIEW
+Lakshmi Machine Works	2025	standalone	materials_cost	1769.1	UNKNOWN	lakshmi_machine_works_FY25.pdf	81	pdfplumber	"a) Investments in subsidiaries 208.35 72.76 Cost of materials consumed 22 1,769.10 2,905.35"		PENDING_REVIEW
+Lakshmi Machine Works	2025	standalone	equity	2871.83	UNKNOWN	lakshmi_machine_works_FY25.pdf	81	pdfplumber	"Total Equity 2,871.83 2,662.29 Total Tax expense 48.63 108.50"		PENDING_REVIEW
+Lakshmi Machine Works	2025	standalone	borrowings_lt	0	UNKNOWN	lakshmi_machine_works_FY25.pdf	106	pdfplumber	The company does not have any external borrowings from banks or any other financial institution. The company	Zero-value candidate based on an explicit company-wide no-borrowings disclosure. Human validation required.	PENDING_REVIEW
+Lakshmi Machine Works	2025	standalone	borrowings_st	0	UNKNOWN	lakshmi_machine_works_FY25.pdf	106	pdfplumber	The company does not have any external borrowings from banks or any other financial institution. The company	Zero-value candidate based on an explicit company-wide no-borrowings disclosure. Human validation required.	PENDING_REVIEW
+Lakshmi Machine Works	2026	standalone	revenue	3081.84	INR_crore	lakshmi_machine_works_FY26.pdf	45	pdfplumber	"Audit Committee and the Board of Directors recommends the proposed transaction to the The Company’s Revenue from Operations is at C 3,081.84 Crores during the year compared to C 2,909.40 Crores in the"		PENDING_REVIEW
+Lakshmi Machine Works	2026	standalone	net_profit	167.1	UNKNOWN	lakshmi_machine_works_FY26.pdf	109	pdfplumber	30.7 Earnings Per Shar		PENDING_REVIEW
+Lakshmi Machine Works	2026	standalone	pbt	207.88	UNKNOWN	lakshmi_machine_works_FY26.pdf	91	pdfplumber	Equity Profit before tax after exceptional items 207.88 286.87		PENDING_REVIEW
+Lakshmi Machine Works	2026	standalone	depreciation	114.43	UNKNOWN	lakshmi_machine_works_FY26.pdf	91	pdfplumber	Depreciation and amortisation expense 25 114.43 107.26		PENDING_REVIEW
+Lakshmi Machine Works	2026	standalone	materials_cost	1930.84	UNKNOWN	lakshmi_machine_works_FY26.pdf	91	pdfplumber	"Cost of materials consumed 22 1,930.84 1,769.10"		PENDING_REVIEW
+Lakshmi Machine Works	2026	standalone	equity	2970.64	UNKNOWN	lakshmi_machine_works_FY26.pdf	91	pdfplumber	"Total Equity 2,970.64 2,871.83"		PENDING_REVIEW
+Precot	2024	standalone	borrowings_lt	14430.35	UNKNOWN	precot_FY24.pdf	43	pdfplumber	"(i) Borrowings 18 14,430.35 14,497.10"	Extracted from Balance Sheet liability section.	PENDING_REVIEW
+Precot	2024	standalone	borrowings_st	22455.11	UNKNOWN	precot_FY24.pdf	43	pdfplumber	"(i) Borrowings 22 22,455.11 23,285.47"	Extracted from Balance Sheet liability section.	PENDING_REVIEW
+Precot	2024	standalone	revenue	97776	INR_lakhs	precot_FY24.pdf	3	pdfplumber	"Revenue from operations 97,776 95,382 period. This mirrored an increase in the international futures"		PENDING_REVIEW
+Precot	2024	standalone	net_profit	1678	INR_lakhs	precot_FY24.pdf	3	pdfplumber	"Profit After Tax 1,678 (2,602) continues to disrupt global shipping and has led to increased lead"		PENDING_REVIEW
+Precot	2024	standalone	pbt	3997	UNKNOWN	precot_FY24.pdf	157	pdfplumber	"Profit before Tax and depreciation 3,997 (113) attached to the annual report:"		PENDING_REVIEW
+Precot	2024	standalone	finance_cost	3935	INR_lakhs	precot_FY24.pdf	3	pdfplumber	"Less: Finance cost 3,935 3,614 index for July is back below 80 cents and Indian cotton prices have"		PENDING_REVIEW
+Precot	2024	standalone	depreciation	2267.36	UNKNOWN	precot_FY24.pdf	44	pdfplumber	"Depreciation and amortization expenses 35 2,267.36 3,339.74"		PENDING_REVIEW
+Precot	2024	standalone	materials_cost	56765.89	UNKNOWN	precot_FY24.pdf	44	pdfplumber	"Cost of materials consumed 30 56,765.89 64,797.86"		PENDING_REVIEW
+Precot	2024	standalone	equity	39481.26	UNKNOWN	precot_FY24.pdf	43	pdfplumber	"Total Equity 39,481.26 38,231.25"		PENDING_REVIEW
+Precot	2025	standalone	borrowings_lt	10313.18	UNKNOWN	precot_FY25.pdf	45	pdfplumber	"(i) Borrowings 19 10,313.18 14,430.35"	Extracted from Balance Sheet liability section.	PENDING_REVIEW
+Precot	2025	standalone	borrowings_st	22258.6	UNKNOWN	precot_FY25.pdf	45	pdfplumber	"(i) Borrowings 23 22,258.60 22,455.11"	Extracted from Balance Sheet liability section.	PENDING_REVIEW
+Precot	2025	standalone	revenue	86819	INR_lakhs	precot_FY25.pdf	3	pdfplumber	"Revenue from operations 86,819 84,060 Indian textile and apparel exports registered a growth of 6.3% in FY"		PENDING_REVIEW
+Precot	2025	standalone	net_profit	211.38	UNKNOWN	precot_FY25.pdf	75	pdfplumber	Current tax on profit for the year 211.38 -		PENDING_REVIEW
+Precot	2025	standalone	pbt	6791.27	UNKNOWN	precot_FY25.pdf	46	pdfplumber	"VII Profit before tax from continuing operations (V - VI) 6,791.27 2,541.89"		PENDING_REVIEW
+Precot	2025	standalone	finance_cost	2869	INR_lakhs	precot_FY25.pdf	3	pdfplumber	"Less: Finance cost 2,869 3,220 3.6%. Bangladesh continued to be the largest market for Indian"		PENDING_REVIEW
+Precot	2025	standalone	depreciation	1864.81	UNKNOWN	precot_FY25.pdf	46	pdfplumber	"Depreciation and amortization expenses 35 1,864.81 1,961.17"		PENDING_REVIEW
+Precot	2025	standalone	materials_cost	48021.66	UNKNOWN	precot_FY25.pdf	46	pdfplumber	"Cost of materials consumed 31 48,021.66 47,235.36"		PENDING_REVIEW
+Precot	2025	standalone	equity	42509.67	UNKNOWN	precot_FY25.pdf	45	pdfplumber	"Total Equity 42,509.67 39,481.26"		PENDING_REVIEW
+Precot	2026	standalone	borrowings_lt	13030	UNKNOWN	precot_FY26.pdf	48	pdfplumber	"(i) Borrowings 19 13,030.00 10,313.18"	Extracted from Balance Sheet liability section.	PENDING_REVIEW
+Precot	2026	standalone	borrowings_st	21445.04	UNKNOWN	precot_FY26.pdf	48	pdfplumber	"(i) Borrowings 23 21,445.04 22,258.60"	Extracted from Balance Sheet liability section.	PENDING_REVIEW
+Precot	2026	standalone	revenue	88555	INR_lakhs	precot_FY26.pdf	4	pdfplumber	"Revenue from operations 88,555 86,819 domestic and export markets with the tariff uncertainty,"		PENDING_REVIEW
+Precot	2026	standalone	net_profit	1180	UNKNOWN	precot_FY26.pdf	79	pdfplumber	"Current tax on profit for the year 1,180.00 211.38"		PENDING_REVIEW
+Precot	2026	standalone	pbt	4994.17	UNKNOWN	precot_FY26.pdf	49	pdfplumber	"VII Profit before tax from continuing operations (V - VI) 4,994.17 6,791.27"		PENDING_REVIEW
+Precot	2026	standalone	finance_cost	3720	INR_lakhs	precot_FY26.pdf	4	pdfplumber	"Less: Finance cost 3,720 2,869 through the year with international growths priced competitively"		PENDING_REVIEW
+Precot	2026	standalone	depreciation	2877.24	UNKNOWN	precot_FY26.pdf	49	pdfplumber	"( f ) Depreciation and amortization expenses 37 2,877.24 1,864.81"		PENDING_REVIEW
+Precot	2026	standalone	materials_cost	42580.04	UNKNOWN	precot_FY26.pdf	49	pdfplumber	"( a ) Cost of materials consumed 32 42,580.04 48,021.66"		PENDING_REVIEW
+Precot	2026	standalone	equity	45733.43	UNKNOWN	precot_FY26.pdf	48	pdfplumber	"Total Equity 45,733.43 42,509.67"		PENDING_REVIEW
+Rajapalayam Mills	2024	standalone	borrowings_lt	49616.32	INR_lakhs	rajapalayam_mills_FY24.pdf	104	pdfplumber	"(i) Borrowings 25 49,616.32 48,110.75"	Extracted from Balance Sheet liability section.	PENDING_REVIEW
+Rajapalayam Mills	2024	standalone	borrowings_st	58550.25	INR_lakhs	rajapalayam_mills_FY24.pdf	104	pdfplumber	"(i) Borrowings 29 58,550.25 62,748.62"	Extracted from Balance Sheet liability section.	PENDING_REVIEW
+Rajapalayam Mills	2024	standalone	revenue	85855.86	INR_lakhs	rajapalayam_mills_FY24.pdf	105	pdfplumber	"I Revenue from Operations 34 85,855.86 86,189.43"		PENDING_REVIEW
+Rajapalayam Mills	2024	standalone	net_profit	2830.3	INR_lakhs	rajapalayam_mills_FY24.pdf	105	pdfplumber	"IX Profit for the year (VII-VIII) 2,830.30 4,238.23"		PENDING_REVIEW
+Rajapalayam Mills	2024	standalone	pbt	2344.33	INR_lakhs	rajapalayam_mills_FY24.pdf	105	pdfplumber	"VII Profit Before Tax (V+VI) 2,344.33 4,828.27"		PENDING_REVIEW
+Rajapalayam Mills	2024	standalone	finance_cost	7403.01	INR_lakhs	rajapalayam_mills_FY24.pdf	105	pdfplumber	"Finance Costs 40 7,403.01 5,505.72"		PENDING_REVIEW
+Rajapalayam Mills	2024	standalone	depreciation	6733.13	INR_lakhs	rajapalayam_mills_FY24.pdf	105	pdfplumber	"Depreciation and Amortisation Expenses 41 6,733.13 5,661.90"		PENDING_REVIEW
+Rajapalayam Mills	2024	standalone	materials_cost	45403.57	INR_lakhs	rajapalayam_mills_FY24.pdf	105	pdfplumber	"Cost of Materials Consumed 36 45,403.57 49,061.25"		PENDING_REVIEW
+Rajapalayam Mills	2024	standalone	equity	48283.8	INR_lakhs	rajapalayam_mills_FY24.pdf	104	pdfplumber	"Total Equity 48,283.80 45,466.72"		PENDING_REVIEW
+Rajapalayam Mills	2025	standalone	borrowings_lt	53070.73	INR_lakhs	rajapalayam_mills_FY25.pdf	112	pdfplumber	"(i) Borrowings 25 53,070.73 49,616.32"	Extracted from Balance Sheet liability section.	PENDING_REVIEW
+Rajapalayam Mills	2025	standalone	borrowings_st	57684.72	INR_lakhs	rajapalayam_mills_FY25.pdf	112	pdfplumber	"(i) Borrowings 29 57,684.72 58,550.25"	Extracted from Balance Sheet liability section.	PENDING_REVIEW
+Rajapalayam Mills	2025	standalone	revenue	89847.79	INR_lakhs	rajapalayam_mills_FY25.pdf	113	pdfplumber	"I Revenue from Operations 34 89,847.79 85,855.86"		PENDING_REVIEW
+Rajapalayam Mills	2025	standalone	net_profit	-5020.47	INR_lakhs	rajapalayam_mills_FY25.pdf	113	pdfplumber	"IX Profit / (Loss) for the year (VII-VIII) (5,020.47) 2,830.30"		PENDING_REVIEW
+Rajapalayam Mills	2025	standalone	pbt	-6668.38	INR_lakhs	rajapalayam_mills_FY25.pdf	113	pdfplumber	"VII Profit / (Loss) Before Tax (V+VI) (6,668.38) 2,344.33"		PENDING_REVIEW
+Rajapalayam Mills	2025	standalone	finance_cost	9089.9	INR_lakhs	rajapalayam_mills_FY25.pdf	113	pdfplumber	"Finance Costs 40 9,089.90 7,403.01"		PENDING_REVIEW
+Rajapalayam Mills	2025	standalone	depreciation	7534.28	INR_lakhs	rajapalayam_mills_FY25.pdf	113	pdfplumber	"Depreciation and Amortisation Expenses 41 7,534.28 6,733.13"		PENDING_REVIEW
+Rajapalayam Mills	2025	standalone	materials_cost	47345.38	INR_lakhs	rajapalayam_mills_FY25.pdf	113	pdfplumber	"Cost of Materials Consumed 36 47,345.38 45,403.57"		PENDING_REVIEW
+Rajapalayam Mills	2025	standalone	equity	43057.19	INR_lakhs	rajapalayam_mills_FY25.pdf	112	pdfplumber	"Total Equity 43,057.19 48,283.80"		PENDING_REVIEW
+Rajapalayam Mills	2026	standalone	borrowings_lt	48391.06	INR_lakhs	rajapalayam_mills_FY26.pdf	126	pdfplumber	"(i) Borrowings 25 48,391.06 53,070.73"	Extracted from Balance Sheet liability section.	PENDING_REVIEW
+Rajapalayam Mills	2026	standalone	borrowings_st	65756.08	INR_lakhs	rajapalayam_mills_FY26.pdf	126	pdfplumber	"(i) Borrowings 29 65,756.08 57,684.72"	Extracted from Balance Sheet liability section.	PENDING_REVIEW
+Rajapalayam Mills	2026	standalone	revenue	94204.11	INR_lakhs	rajapalayam_mills_FY26.pdf	127	pdfplumber	"I Revenue from Operations 34 94,204.11 89,847.79"		PENDING_REVIEW
+Rajapalayam Mills	2026	standalone	net_profit	-1512.38	INR_lakhs	rajapalayam_mills_FY26.pdf	127	pdfplumber	"IX Profit / (Loss) for the year (VII-VIII) (1,512.38) (5,020.47)"		PENDING_REVIEW
+Rajapalayam Mills	2026	standalone	pbt	-2027.17	INR_lakhs	rajapalayam_mills_FY26.pdf	127	pdfplumber	"VII Profit / (Loss) Before Tax (V+VI) (2,027.17) (6,668.38)"		PENDING_REVIEW
+Rajapalayam Mills	2026	standalone	finance_cost	9209.11	INR_lakhs	rajapalayam_mills_FY26.pdf	127	pdfplumber	"Finance Costs 40 9,209.11 9,089.90"		PENDING_REVIEW
+Rajapalayam Mills	2026	standalone	depreciation	7539.23	INR_lakhs	rajapalayam_mills_FY26.pdf	127	pdfplumber	"Depreciation and Amortisation Expenses 41 7,539.23 7,534.28"		PENDING_REVIEW
+Rajapalayam Mills	2026	standalone	materials_cost	43589.34	INR_lakhs	rajapalayam_mills_FY26.pdf	127	pdfplumber	"Cost of Materials Consumed 36 43,589.34 47,345.38"		PENDING_REVIEW
+Rajapalayam Mills	2026	standalone	equity	41675.91	INR_lakhs	rajapalayam_mills_FY26.pdf	126	pdfplumber	"Total Equity 41,675.91 43,057.19"		PENDING_REVIEW

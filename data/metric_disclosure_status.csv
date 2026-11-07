@@ -1,0 +1,8 @@
+company,fiscal_year,basis,metric,disclosure_status,source_file,page_no,note
+ambika_cotton_mills,2026,standalone,borrowings_lt,REPORTED_VALUE,ambika_cotton_mills_FY26.pdf,90,Note 16 confirms total borrowings are zero.
+kpr_mill,2025,standalone,borrowings_lt,NOT_SEPARATELY_REPORTED,kpr_mill_FY25.pdf,99,Standalone balance sheet has no separate non-current borrowings line; retain as undisclosed pending detailed note verification.
+lakshmi_machine_works,2024,standalone,borrowings_lt,REPORTED_VALUE,lakshmi_machine_works_FY24.pdf,212,Explicit no-borrowings disclosure in standalone notes.
+lakshmi_machine_works,2024,standalone,borrowings_st,REPORTED_VALUE,lakshmi_machine_works_FY24.pdf,212,Explicit no-borrowings disclosure in standalone notes.
+lakshmi_machine_works,2026,standalone,finance_cost,REPORTED_VALUE,lakshmi_machine_works_FY26.pdf,91,Dash shown in standalone statement of profit and loss; recorded as zero.
+lakshmi_machine_works,2026,standalone,borrowings_lt,NOT_SEPARATELY_REPORTED,lakshmi_machine_works_FY26.pdf,91,No separate non-current borrowings line on standalone balance sheet; no zero inserted.
+lakshmi_machine_works,2026,standalone,borrowings_st,NOT_SEPARATELY_REPORTED,lakshmi_machine_works_FY26.pdf,91,No separate current borrowings line on standalone balance sheet; no zero inserted.
