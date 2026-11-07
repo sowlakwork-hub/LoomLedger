@@ -2,6 +2,11 @@
 import json
 from pathlib import Path
 from typing import Annotated
+import hmac
+import os
+import sqlite3
+
+from fastapi import Header, Request
 
 from fastapi import Depends, FastAPI, HTTPException, Query
 from fastapi.responses import (
@@ -227,3 +232,78 @@ def chart() -> str:
     return (
         Path(__file__).parent / "chart.html"
     ).read_text(encoding="utf-8")
+
+
+@app.post("/internal/upload-sqlite")
+async def upload_sqlite(
+    request: Request,
+    x_upload_token: Annotated[str, Header()],
+):
+    expected_token = os.environ.get("SQLITE_UPLOAD_TOKEN", "")
+
+    if not expected_token or not hmac.compare_digest(
+        x_upload_token, expected_token
+    ):
+        raise HTTPException(401, "Unauthorized")
+
+    destination = Path("/app/data/loomledger.sqlite")
+    temporary = Path("/app/data/loomledger.sqlite.uploading")
+
+    destination.parent.mkdir(parents=True, exist_ok=True)
+
+    try:
+        total = 0
+
+        with temporary.open("wb") as file:
+            async for chunk in request.stream():
+                total += len(chunk)
+
+                if total > 50 * 1024 * 1024:
+                    raise HTTPException(413, "File too large")
+
+                file.write(chunk)
+
+        con = sqlite3.connect(str(temporary))
+
+        try:
+            integrity = con.execute(
+                "PRAGMA integrity_check"
+            ).fetchone()[0]
+
+            if integrity != "ok":
+                raise HTTPException(400, "SQLite integrity check failed")
+
+            expected_counts = {
+                "facts": 133,
+                "pages": 2909,
+                "metric_disclosure_status": 7,
+                "llm_usage": 16,
+            }
+
+            for table, expected in expected_counts.items():
+                actual = con.execute(
+                    f"SELECT COUNT(*) FROM {table}"
+                ).fetchone()[0]
+
+                if actual != expected:
+                    raise HTTPException(
+                        400,
+                        f"Unexpected record count in {table}: {actual}",
+                    )
+
+        finally:
+            con.close()
+
+        os.replace(temporary, destination)
+
+        return {
+            "status": "success",
+            "bytes_received": total,
+            "database": str(destination),
+            "integrity": "ok",
+            "tables_verified": 4,
+        }
+
+    except Exception:
+        temporary.unlink(missing_ok=True)
+        raise
