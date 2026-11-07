@@ -27,7 +27,13 @@ CREATE TABLE IF NOT EXISTS metric_disclosure_status (
   fiscal_year INTEGER NOT NULL,
   basis TEXT NOT NULL CHECK (basis IN ('standalone','consolidated')),
   metric TEXT NOT NULL,
-  disclosure_status TEXT NOT NULL CHECK (disclosure_status IN ('REPORTED_VALUE','NOT_SEPARATELY_REPORTED','EXTRACTION_NOT_FOUND')),
+  disclosure_status TEXT NOT NULL CHECK (
+    disclosure_status IN (
+        'REPORTED_VALUE',
+        'NOT_SEPARATELY_REPORTED',
+        'EXTRACTION_NOT_FOUND'
+    )
+),
   source_file TEXT NOT NULL,
   page_no INTEGER NOT NULL,
   note TEXT NOT NULL,

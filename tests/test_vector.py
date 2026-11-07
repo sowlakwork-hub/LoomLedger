@@ -1,6 +1,7 @@
+from pgvector import Vector
+
 from app.embeddings import generate_embedding
 from app.postgres import connect_postgres
-from pgvector import Vector
 
 
 def main():

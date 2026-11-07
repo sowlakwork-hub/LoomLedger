@@ -8,7 +8,7 @@ Existing facts are never overwritten; duplicates cause a clear error.
 """
 import csv
 import sys
-from pathlib import Path
+
 from app.config import get_settings
 from app.db import connect, init_db
 
@@ -31,7 +31,10 @@ def main(csv_path: str):
             reader = csv.DictReader(fh, delimiter="\t")
             for row in reader:
                 if row.get("review_status", "").upper() != "PENDING_REVIEW":
-                    raise ValueError("Expected the supplied manually checked candidate file with PENDING_REVIEW markers.")
+                    raise ValueError(
+    "Expected the supplied manually checked candidate file "
+    "with PENDING_REVIEW markers."
+)
                 company = ALIASES.get(row["company"])
                 if not company:
                     raise ValueError(f"Unknown company: {row['company']}")

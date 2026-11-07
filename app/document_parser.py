@@ -3,10 +3,10 @@ import re
 from pathlib import Path
 
 from app.extract import (
+    DEFAULT_DPI,
+    clean_text,
     extract_pdf_text,
     ocr_page,
-    clean_text,
-    DEFAULT_DPI,
 )
 
 MIN_READABLE_TEXT = 80

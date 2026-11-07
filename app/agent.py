@@ -6,16 +6,15 @@ Python performs all arithmetic.
 import json
 import re
 import time
-from app.retrieval import retrieve_document_chunks
 
 from google import genai
 from google.genai import types
 
 from app.db import record_llm_usage
 from app.ratios import RATIOS
+from app.retrieval import retrieve_document_chunks
 from app.service import ratio_series
 from app.sqlguard import UnsafeSQL, run_readonly
-
 
 REQUEST_TIMEOUT_MS = 30000
 MAX_RETRIES = 3

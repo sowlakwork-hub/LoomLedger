@@ -1,17 +1,15 @@
 
-from pathlib import Path
 import re
+from pathlib import Path
 
 import pytest
 
 from app.extract import (
     METRIC_LABELS,
-    extract_number_after_label,
     detect_unit,
-    extract_pdf_text,
     extract_general_metrics,
-    extract_balance_sheet_borrowings,
-    process_report,
+    extract_number_after_label,
+    extract_pdf_text,
 )
 
 

@@ -1,15 +1,14 @@
 
 import sys
-from pathlib import Path
 import time
+from pathlib import Path
 
 from google import genai
 from pgvector import Vector
 
 from app.config import get_settings
-from app.document_parser import extract_document_pages, chunk_pages
+from app.document_parser import chunk_pages, extract_document_pages
 from app.postgres import connect_postgres
-
 
 BATCH_SIZE = 4
 PAUSE_SECONDS = 10
@@ -92,7 +91,7 @@ def store_chunks(chunks: list[dict], client, settings) -> int:
                 settings,
             )
 
-            for chunk, embedding in zip(batch, embeddings):
+            for chunk, embedding in zip(batch, embeddings, strict=True):
                 con.execute(
                     """
                     INSERT INTO document_chunks (

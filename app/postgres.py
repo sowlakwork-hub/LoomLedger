@@ -1,6 +1,7 @@
 import psycopg
-from psycopg.rows import dict_row
 from pgvector.psycopg import register_vector
+from psycopg.rows import dict_row
+
 from app.config import Settings, get_settings
 
 

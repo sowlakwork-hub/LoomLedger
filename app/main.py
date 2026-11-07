@@ -1,14 +1,12 @@
 
-import json
-from pathlib import Path
-from typing import Annotated
 import hmac
+import json
 import os
 import sqlite3
+from pathlib import Path
+from typing import Annotated
 
-from fastapi import Header, Request
-
-from fastapi import Depends, FastAPI, HTTPException, Query
+from fastapi import Depends, FastAPI, Header, HTTPException, Query, Request
 from fastapi.responses import (
     FileResponse,
     HTMLResponse,
@@ -21,7 +19,6 @@ from app.db import connect, get_llm_usage
 from app.ratios import RATIOS
 from app.schemas import AskRequest
 from app.service import ratio_series
-
 
 app = FastAPI(title="LoomLedger", version="0.3.0")
 

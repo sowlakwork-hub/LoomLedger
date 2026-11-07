@@ -1,7 +1,7 @@
 
 from pathlib import Path
 
-from app.document_parser import extract_document_pages, chunk_pages
+from app.document_parser import chunk_pages, extract_document_pages
 
 PDF_PATH = Path("data/raw/kpr_mill_FY25.pdf")
 

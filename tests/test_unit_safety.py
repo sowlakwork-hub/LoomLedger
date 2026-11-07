@@ -1,5 +1,7 @@
 import pytest
+
 from app.ratios import Fact, compute_ratio
+
 
 def fact(metric, value, page, unit):
     return Fact("kpr_mill", 2025, "standalone", metric, value, "report.pdf", page, unit)
